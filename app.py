@@ -18,7 +18,7 @@ login_manager.init_app(app)
 os.makedirs('database',exist_ok=True)
 
 with app.app_context():
-    from models import User
+    from models import User,Student,Company,Drive,Application
 
     database.create_all()
 
