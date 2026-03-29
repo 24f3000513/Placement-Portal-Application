@@ -10,5 +10,8 @@ class Student(database.Model):
     cgpa = database.Column(database.Float,nullable = False)
     phone_no = database.Column(database.String(15),nullable = False,unique = True)
     is_blacklisted = database.Column(database.Boolean, default = False)
+    is_placed = database.Column(database.Boolean, default = False)
+    salary_placed = database.Column(database.String(10))
 
+    placed_in = database.Column(database.Integer,database.ForeignKey("companies.id"))
     user = database.relationship("User", backref=database.backref("student", uselist=False))

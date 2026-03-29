@@ -11,9 +11,10 @@ class Drive(database.Model):
     job_description = database.Column(database.Text)
     salary_min = database.Column(database.Float)
     salary_max = database.Column(database.Float)
+    cgpa_required = database.Column(database.Float)
     eligibility = database.Column(database.Text)
     deadline = database.Column(database.Date)
 
-    status = database.Column(Enum("pending", "approved", "rejected", name="drive_status"),default="pending")
+    status = database.Column(Enum("pending", "approved", "rejected" , "completed", name="drive_status"),default="pending")
     company = database.relationship("Company", backref="drives")
     
