@@ -3,7 +3,7 @@ from sqlalchemy import Enum
 from flask_login import UserMixin
 from flask_bcrypt import generate_password_hash,check_password_hash
 
-class User(database.Model):
+class User(UserMixin,database.Model):
     __tablename__ = "users"
 
     id = database.Column(database.Integer,primary_key = True)
